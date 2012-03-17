@@ -1,0 +1,12 @@
+%h1 Belépés
+- unless flash.now[:alert].blank?
+  .alert.alert-error
+    %a.close{:href=>"#", :data => {:dismiss => "alert"}} &times;
+    = flash.now[:alert]
+
+= form_tag "login" do
+  = label_tag :email
+  = text_field_tag :email
+  = label_tag :password, "Jelszó"
+  = password_field_tag :password
+  = submit_tag "Belépés", :class => "btn"

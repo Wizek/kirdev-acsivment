@@ -1,0 +1,9 @@
+%h1= @achievement.name
+%dl
+  %dt Leírás
+  %dd= @achievement.description
+  %dt Teljesítéshez szükséges szavazat
+  %dd= @achievement.acceptance
+  %dt Létrehozta
+  %dd
+    = link_to @achievement.creator.name, profile_path(@achievement.creator)
