@@ -11,6 +11,9 @@ gem 'sqlite3'
 gem 'haml'
 gem 'haml-rails'
 
+# authorization
+gem 'cancan'
+
 # upload
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 

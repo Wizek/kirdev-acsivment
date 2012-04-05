@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_authorization_check # barki regisztalhat
+
   def new
     @user = User.new
   end
@@ -13,6 +15,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.incl.find(params[:id])
+    @user = User.find(params[:id])
   end
 end

@@ -1,3 +1,4 @@
+= image_tag @achievement.badge.url(:thumb) if @achievement.badge.present?
 %h1= @achievement.name
 %dl
   %dt Leírás

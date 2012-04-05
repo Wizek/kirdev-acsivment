@@ -1,15 +1,14 @@
-.well
-  %h1 Regisztráció
+%h1 Regisztráció
 
-  = render 'shared/form_error', :model => @user
+= render 'shared/form_error', :model => @user
 
-  = form_for @user, :url => "signup" do |f|
-    = f.label :name, "Név"
-    = f.text_field :name
-    = f.label :email
-    = f.text_field :email
-    = f.label :password, "Jelszó"
-    = f.password_field :password
-    = f.label :password_confirmation, "Jelszó még egyszer"
-    = f.password_field :password_confirmation
-    = f.submit "Regisztráció", :class => "btn"
+= form_for @user, :url => "signup" do |f|
+  = f.label :name, "Név"
+  = f.text_field :name
+  = f.label :email
+  = f.text_field :email
+  = f.label :password, "Jelszó"
+  = f.password_field :password
+  = f.label :password_confirmation, "Jelszó még egyszer"
+  = f.password_field :password_confirmation
+  = f.submit "Regisztráció", :class => "btn"

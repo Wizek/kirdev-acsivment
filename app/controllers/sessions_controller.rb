@@ -1,6 +1,8 @@
 # encoding: UTF-8
 
 class SessionsController < ApplicationController
+  skip_authorization_check # barki belephet es kilephet
+
   def new
 
   end
@@ -11,7 +13,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_back_or_to :root
     else
-      flash.now.alert = "Érvénytelen felhasználónév vagy jelszó!"
+      flash.now.alert = "Érvénytelen felhasználónév vagy jelszó!" # TODO: kirakni valami resource fájlba
       render :new
     end
   end

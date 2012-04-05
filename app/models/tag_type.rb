@@ -4,4 +4,9 @@ class TagType
 
   # csak moderatori jogosultsaggal rendelekezo felhasznalo hasznalhatja a cimket
   MODERATOR = 2
+
+
+  def self.all
+    [REGULAR, MODERATOR]
+  end
 end

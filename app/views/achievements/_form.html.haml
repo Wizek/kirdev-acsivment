@@ -1,16 +1,15 @@
 / esetleges hibak listazasa
 = render 'shared/form_error', :model => @achievement
 
-= form_for @achievement do |f|
+= form_for @achievement, :html => { :multipart => true } do |f|
   = f.label :name, "Név"
   = f.text_field :name
   = f.label :description, "Leírás"
   = f.text_area :description, :rows => 6
-  = f.label :acceptance, "Szavazatok száma az elfogadáshoz"
+  = f.label :badge, "Acsívment jelvény"
+  = f.file_field :badge
+  = f.label :acceptance, "Teljesítéshez szükséges szavazatok száma"
   = f.text_field :acceptance
-  = f.label :suspended, :class => "checkbox" do
-    = f.check_box :suspended
-    Felfüggesztve
   = label_tag :tags, "Címkék (vesszővel elválasztva)"
   = text_field_tag :tags, nil
   = f.submit "Mentés", :class => "btn"

@@ -17,3 +17,6 @@
 # Ignore IDE files
 /.redcar
 /.idea
+
+# Ignore uploaded pictures
+/public/system

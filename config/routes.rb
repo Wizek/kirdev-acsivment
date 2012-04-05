@@ -12,6 +12,4 @@ Acsivment::Application.routes.draw do
   post '/login' => "sessions#create"
   get '/logout' => "sessions#logout", :as => "logout"
   
-  
-
 end

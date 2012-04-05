@@ -1,4 +1,11 @@
 class AchievementStatus
+  # lathato publikusan
   PUBLIC = 1
-  RESTRICTED = 2
+
+  # elbiralasra var
+  PENDING = 2
+
+  def self.all
+    [PUBLIC, PENDING]
+  end
 end
