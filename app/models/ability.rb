@@ -8,12 +8,14 @@ class Ability
       can :manage, :all
     elsif user.has_role? :moderator
       # TODO
+      can :read, :all
     elsif user.has_role? :user
       can :create, Achievement
       can :update, Achievement, :creator_id => user.id
+      can :read, :all
     elsif user.has_role? :banned
       # TODO
-    else
+    elsif
       can :read, :all
     end
 

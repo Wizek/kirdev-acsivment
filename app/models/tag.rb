@@ -5,11 +5,12 @@ class Tag < ActiveRecord::Base
 
   # type validation: megengdett ertekek ld. TagType osztaly
   validates :tag_type, :inclusion => {:in => [TagType::REGULAR, TagType::MODERATOR], :message => "%{value} is not an allowed type"}
+  validates :name, :presence => true
 
   private
 
   def default_values
-    self.tag_type = TagType::REGULAR
+    self.tag_type ||= TagType::REGULAR
   end
 
 end

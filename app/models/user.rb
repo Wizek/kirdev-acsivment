@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   def has_role? role
     role = role.to_sym unless role.is_a? Symbol
-    Roles.roles.include?(role) && self.role.to_sym == role
+    self.role && Roles.roles.include?(role) && self.role.to_sym == role
   end
 
   private

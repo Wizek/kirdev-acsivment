@@ -4,8 +4,8 @@ class AchievementsController < ApplicationController
 
   # GET /
   def index
-    authorize! :read, Achievement
     @achievements = Achievement.includes(:creator).limit(20)
+    authorize! :read, @achievements
   end
 
   # GET /new

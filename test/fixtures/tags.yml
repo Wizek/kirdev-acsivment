@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
-  type: 
+regular:
+  id: 1
+  name: regular_tag
+  tag_type: 1
 
-two:
-  name: MyString
-  type: 
+moderator:
+  id: 2
+  name: moderator_tag
+  tag_type: 2

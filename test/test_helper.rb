@@ -10,4 +10,13 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  def create_test_user
+    User.new(name: "test", password: "test", password_confirmation: "test", email: "test@a.b")
+  end
+
+  def create_test_user_without_password
+    User.new(name: "test", email: "test@a.b")
+  end
+
 end

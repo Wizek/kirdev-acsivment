@@ -3,8 +3,8 @@ class Achievement < ActiveRecord::Base
   has_and_belongs_to_many :tags
   has_attached_file :badge, :styles => { :meduim => "300x300>", :thumb => "100x100>" }
 
-  validates :name, :presence => true
-  validates :description, :presence => true
+  validates :name, :acceptance, :presence => true
+  validates :acceptance, :numericality => { :greater_than_or_equal_to => 1, :only_integer => true}
   validates :status, :inclusion =>  {:in => [AchievementStatus::PUBLIC, AchievementStatus::PENDING],
                                      :message => "%{value} is not an allowed status" }
   validates :suspended, :inclusion => { :in => [true, false], :message => "%{value} is not allowed as bool" }
