@@ -1,6 +1,5 @@
 class AchievementsController < ApplicationController
   before_filter :login_reguired, :except => [:index,:show]
-  skip_authorization_check :only => [:show]
 
   # GET /
   def index
@@ -49,5 +48,6 @@ class AchievementsController < ApplicationController
 
   def show
     @achievement = Achievement.find(params[:id])
+    authorize! :read, @achievement
   end
 end

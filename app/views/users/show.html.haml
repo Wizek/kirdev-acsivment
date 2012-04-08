@@ -1,0 +1,10 @@
+%h1
+  = @user.name
+  adatlapja
+
+%dl
+  %dt Email
+  %dd= @user.email
+  %dt Létrehozott acsivmentek
+  %dd
+    = render(@user.achievements) || "Nincsenek acsivmentek"

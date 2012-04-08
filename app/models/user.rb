@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
   validates :password, :presence => true, :on => :create
   validates :email, :role, :presence => true
   validates :role, :inclusion => { :in => Roles.roles }
-  has_many :achievements
+  has_many :achievements, :foreign_key => "creator_id"
+  has_many :comments
 
   # methods
 

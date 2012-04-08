@@ -13,6 +13,7 @@ class Achievement < ActiveRecord::Base
   
   belongs_to :creator, :class_name => "User"
   belongs_to :supervisor, :class_name => "User"
+  has_many :comments
   
   def default_values
     self.suspended ||= false

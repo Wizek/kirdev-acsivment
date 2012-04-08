@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120405161852) do
+ActiveRecord::Schema.define(:version => 20120408115941) do
 
   create_table "achievements", :force => true do |t|
     t.string   "name"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(:version => 20120405161852) do
   create_table "achievements_tags", :force => true do |t|
     t.integer "achievement_id"
     t.integer "tag_id"
+  end
+
+  create_table "comments", :force => true do |t|
+    t.text     "content"
+    t.boolean  "visible"
+    t.integer  "user_id"
+    t.integer  "achievement_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "tags", :force => true do |t|
