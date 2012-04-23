@@ -5,7 +5,7 @@ class Achievement < ActiveRecord::Base
 
   validates :name, :acceptance, :presence => true
   validates :acceptance, :numericality => { :greater_than_or_equal_to => 1, :only_integer => true}
-  validates :status, :inclusion =>  {:in => [AchievementStatus::PUBLIC, AchievementStatus::PENDING],
+  validates :status, :inclusion =>  {:in => [AchievementStatus::PUBLIC, AchievementStatus::DRAFT],
                                      :message => "%{value} is not an allowed status" }
   validates :suspended, :inclusion => { :in => [true, false], :message => "%{value} is not allowed as bool" }
 

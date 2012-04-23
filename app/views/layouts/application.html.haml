@@ -34,16 +34,14 @@
               %p.navbar-text.pull-right
                 Hello,
                 = link_to current_user.name, profile_path(current_user)
-                = link_to "kiejelentkezés", logout_path
+                = link_to "kijelentkezés", logout_path
             - else
               %p.navbar-text.pull-right
                 = link_to "Lépj be", login_path
                 vagy
                 = link_to "regisztrálj!", signup_path
 
-
     .container
-
       .content
         .row
           .span9

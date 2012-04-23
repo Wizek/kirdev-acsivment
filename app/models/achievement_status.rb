@@ -3,9 +3,9 @@ class AchievementStatus
   PUBLIC = 1
 
   # elbiralasra var
-  PENDING = 2
+  DRAFT = 2
 
   def self.all
-    [PUBLIC, PENDING]
+    [PUBLIC, DRAFT]
   end
 end

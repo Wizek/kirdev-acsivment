@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  check_authorization # force authorization in action, DO NOT REMOVE THIS
+  check_authorization # force authorization in actions, DO NOT REMOVE THIS!!
 
   # masking errors on forms
   ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|

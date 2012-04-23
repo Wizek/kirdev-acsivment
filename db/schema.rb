@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(:version => 20120408115941) do
     t.string   "name"
     t.string   "description"
     t.boolean  "suspended"
+    t.integer  "status"
     t.integer  "acceptance"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
-    t.integer  "status"
     t.integer  "creator_id"
     t.integer  "supervisor_id"
     t.string   "badge_file_name"
@@ -57,9 +57,9 @@ ActiveRecord::Schema.define(:version => 20120408115941) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
+    t.string   "role"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
-    t.string   "role"
   end
 
 end

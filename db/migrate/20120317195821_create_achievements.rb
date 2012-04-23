@@ -4,6 +4,7 @@ class CreateAchievements < ActiveRecord::Migration
       t.string :name
       t.string :description
       t.boolean :suspended
+      t.integer :status
 
       # hany szavazat kell hogy teljesuljon az acsivment
       t.integer :acceptance

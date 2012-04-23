@@ -11,7 +11,7 @@ class Ability
       can :read, :all
     elsif user.has_role? :user
       can :create, Achievement
-      can :update, Achievement, :creator_id => user.id
+      can :update, Achievement, :supervisor_id => user.id
       can :read, :all
     elsif user.has_role? :banned
       # TODO

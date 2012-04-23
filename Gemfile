@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.2'
+gem 'rails', '3.2.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -17,19 +17,24 @@ gem 'cancan'
 # upload
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
-# be quick and be nice
-gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer'
+  # jquery-t hasznalunk coffescript helyett
+  # gem 'coffee-rails', '~> 3.2.1'
+
+  unless ENV['OS'] && ENV['OS'].downcase.include?("windows")
+    # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+    gem 'therubyracer'
+  end
 
   gem 'uglifier', '>= 1.0.3'
+
+  # be quick and be nice
+  gem 'bootstrap-sass', '~> 2.0.2'
 end
 
 gem 'jquery-rails'
