@@ -36,5 +36,9 @@ Acsivment::Application.configure do
   config.assets.debug = true
 
   # ImageMagick for Paperclip
-  Paperclip.options[:command_path] = "/usr/bin/convert"
+  if ENV['OS'].downcase() == 'windows_nt'
+    Paperclip.options[:command_path] = '' #'C:\Program Files (x86)\ImageMagick-6.7.6-Q16'
+  else
+    Paperclip.options[:command_path] = "/usr/bin/convert"
+  end
 end

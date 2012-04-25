@@ -1,4 +1,33 @@
-%h1 Hello World
+%form.form-search.form-inline
+  %input.search-query
+  %button{type: 'submit', class: 'btn'} Keresek
+%h2.row Utoljára teljesített acsívmentek
+.achievements
+  - @latestCompleted.each do |f|
+    - a = f.achievement
+    .achievement.span3
+      %table
+        %tbody
+          %tr
+            %td
+              = image_tag(a.badge.url(:mini))
+            %td
+              %h3= link_to(a.name, a)
+              %span= time_ago_in_words(a.created_at) + ' óta'
+.row
+%h2.row Legutóbb létrehozott acsívmentek
+.achievements
+  - @latestCreated.each do |a|
+    .achievement.span3
+      %table
+        %tbody
+          %tr
+            %td
+              = image_tag(a.badge.url(:mini))
+            %td
+              %h3= link_to(a.name, a)
+              %span= time_ago_in_words(a.created_at) + ' óta'
+.row
 
 - if flash[:alert].present?
   .alert.alert-error
