@@ -27,9 +27,7 @@
           = link_to "Acsívment projekt", :root, :class => "brand"
           .container.nav-collapse
             %ul.nav
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+
             - if current_user
               %p.navbar-text.pull-right
                 Hello,
@@ -40,7 +38,6 @@
                 = link_to "Lépj be", login_path
                 vagy
                 = link_to "regisztrálj!", signup_path
-
     .container
       .content
         .row
@@ -53,9 +50,7 @@
               %ul.nav.nav-list
                 /%li.nav-header Sidebar
                 %li= link_to "Új acsívment", new_achievement_path
-                %li= link_to "Link 2", "/path2"
-                %li= link_to "Link 3", "/path3"
-    
+
       %footer
         %p &copy; Kir-Dev, BME 2012
     /

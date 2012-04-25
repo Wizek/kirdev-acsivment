@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120408115941) do
+ActiveRecord::Schema.define(:version => 20120423203315) do
 
   create_table "achievements", :force => true do |t|
     t.string   "name"
@@ -45,6 +45,18 @@ ActiveRecord::Schema.define(:version => 20120408115941) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
+
+  create_table "fulfillments", :force => true do |t|
+    t.datetime "date"
+    t.integer  "status"
+    t.integer  "user_id"
+    t.integer  "achievement_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "fulfillments", ["achievement_id"], :name => "index_fulfillments_on_achievement_id"
+  add_index "fulfillments", ["user_id"], :name => "index_fulfillments_on_user_id"
 
   create_table "tags", :force => true do |t|
     t.string   "name"

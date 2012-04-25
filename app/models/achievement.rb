@@ -1,7 +1,7 @@
 class Achievement < ActiveRecord::Base
   attr_accessible  :name, :description, :suspended, :acceptance, :badge
   has_and_belongs_to_many :tags
-  has_attached_file :badge, :styles => { :meduim => "300x300>", :thumb => "100x100>" }
+  has_attached_file :badge, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
   validates :name, :acceptance, :presence => true
   validates :acceptance, :numericality => { :greater_than_or_equal_to => 1, :only_integer => true}

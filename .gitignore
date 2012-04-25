@@ -20,3 +20,6 @@
 
 # Ignore uploaded pictures
 /public/system
+
+# ignore generated app docs
+/doc/app

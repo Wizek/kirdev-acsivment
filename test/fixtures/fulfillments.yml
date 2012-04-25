@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 2012-04-23 22:33:15
+  user: 
+  achievement: 
+
+two:
+  date: 2012-04-23 22:33:15
+  user: 
+  achievement: 
